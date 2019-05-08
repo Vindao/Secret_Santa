@@ -1,0 +1,51 @@
+{
+  "name": "secret_santa",
+  "version": "0.0.1",
+  "description": "MERN boilerplate with Webpack",
+  "main": "server/index.js",
+  "scripts": {
+    "install:all": "npm i && npm run install:client && npm run install:server",
+    "install:client": "npm i --prefix app",
+    "build:client": "NODE_ENV=production webpack --config config/client.webpack.prod.js && rm dist/client/*.webp",
+    "start:client": "webpack --watch --config config/client.webpack.dev.js",
+    "install:server": "npm install --prefix server",
+    "start:server": "webpack --watch --config config/server.webpack.dev.js",
+    "build:server": "NODE_ENV=production webpack --config config/server.webpack.prod.js",
+    "build": "npm run build:server && npm run build:client",
+    "start": "npm run start:client & npm run start:server",
+    "git": "git add . && git commit -m 'changes' && git push origin master"
+  },
+  "keywords": [
+    "boilerplate",
+    "starter",
+    "MongoDB",
+    "Express",
+    "React",
+    "PWA",
+    "progressive-web-app",
+    "Nodejs"
+  ],
+  "author": "Vindao (Vincent Schmitt)",
+  "license": "ISC",
+  "devDependencies": {
+    "app-manifest-webpack-plugin": "^1.2.0",
+    "brotli-webpack-plugin": "^1.1.0",
+    "browser-sync": "^2.26.5",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "compression-webpack-plugin": "^2.0.0",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.6.0",
+    "imagemin-webp-webpack-plugin": "^3.1.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "nodemon": "^1.19.0",
+    "nodemon-webpack-plugin": "^4.0.8",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^5.4.4",
+    "typescript": "^3.4.5",
+    "webpack": "^4.30.0",
+    "webpack-cleanup-plugin": "^0.5.1",
+    "webpack-cli": "^3.3.1"
+  },
+  "dependencies": {}
+}
